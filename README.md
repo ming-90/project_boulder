@@ -2,23 +2,19 @@
 
 1. 가상화
 
-    1.1 가상화 라이브러리 설치
+    1.1 가상화 만들기
     ```
-    $ pip3 install virtualenv
+    $ make env
     ```
-    1.2 가상 환경 만들기
+    1.2 필요 라이브러리
     ```
-    $ python3 -m virtualenv {name}
+    $ make setup
     ```
     1.3 가상화 실행
     ```
-    $ source {name}/bin/activate
+    $ conda activate fastapi
     ```
-    1.4 가상화 종료
-    ```
-    $ deactivate
-    ```
-    1.5 실행
+    1.4 실행
     ```
     $ python3 main.py 
     ```

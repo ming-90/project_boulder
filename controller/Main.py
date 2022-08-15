@@ -1,25 +1,31 @@
 from fastapi import APIRouter
 
+from Model.Bourder.BourderModel import BourderModel
+from Model.Bourder.BourderListModel import BourderListModel
+
 router = APIRouter(prefix='/Main')
 
-@router.get('/list')
+@router.get(
+    '/list',
+    response_model=BourderListModel
+)
 def MainList():
-    mainList = {
-        "boulderList": [
-            {
-                "ClimbingCenterId": "1", 
-                "ClimbingCenterName": "클럽 클라이밍", 
-                "UsePrice": 20000, "UseTime": "10:00~17:00"
-            }, 
-            {
-                "ClimbingCenterId": "1", 
-                "ClimbingCenterName": "테스트 클라이밍", 
-                "UsePrice": 20000, "UseTime": "10:00~17:00"
-            }
-        ],
-        "result":{
-            "code":"000",
-            "message":"정상"
-        }
-    }
-    return mainList 
+    
+    bourder1 = BourderModel(
+        climbingCenterId = "test",
+        climbingCenterName = "test",
+        usePrice = 20000,
+        useTime = "10:00~18:00"
+    )
+    bourder2 = BourderModel(
+        climbingCenterId = "test2",
+        climbingCenterName = "test2",
+        usePrice = 20000,
+        useTime = "10:00~18:00"
+    )
+
+    bourderList = []
+    bourderList.append(bourder1)
+    bourderList.append(bourder2)
+
+    return BourderListModel(bourderList = bourderList)
