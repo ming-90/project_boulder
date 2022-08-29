@@ -16,7 +16,7 @@
     ```
     1.4 실행
     ```
-    $ python3 main.py 
+    $ bash start.sh
     ```
 
 2. ORM (sqlalchemy)
