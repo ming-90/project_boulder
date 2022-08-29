@@ -18,11 +18,11 @@ class DataImport:  # pylint: disable=too-few-public-methods
     def __connect(self, query: str) -> Dict[str, Any]:
         """Connect Data Base."""
         conn = psycopg2.connect(
-            host="118.36.80.100",
-            port="55512",
-            dbname="boulder",
-            user="postgres",
-            password="4123",
+            host="",
+            port="",
+            dbname="",
+            user="",
+            password="",
         )
 
         with conn.cursor() as cur:
