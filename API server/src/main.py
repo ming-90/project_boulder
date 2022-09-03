@@ -12,8 +12,8 @@ from Controller import Login, Main
 def create_app():
     """Create app"""
     app = FastAPI()
-    app.include_router(Main.router)
     app.include_router(Login.router)
+    app.include_router(Main.router)
 
     return app
 
